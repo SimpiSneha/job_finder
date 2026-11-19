@@ -1,0 +1,26 @@
+name: daily-job-finder
+on:
+  schedule: [{cron: "30 3 * * *"}]   # 09:00 IST every day
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install requests
+      - run: python job_finder.py
+        env:
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      - name: Save results
+        run: |
+          git config user.name "jobbot"; git config user.email "bot@users.noreply.github.com"
+          git add seen.json new_jobs_*.csv || true
+          git commit -m "daily jobs" || echo "nothing new"
+          git push

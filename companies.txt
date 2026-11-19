@@ -1,0 +1,36 @@
+# format: ats:slug   (ats = greenhouse | lever | ashby)
+# Not every slug below is guaranteed valid - dead ones are reported and skipped.
+# To add a company: open its careers page, look at the URL:
+#   boards.greenhouse.io/<slug>  or job-boards.greenhouse.io/<slug>  -> greenhouse:<slug>
+#   jobs.lever.co/<slug>                                              -> lever:<slug>
+#   jobs.ashbyhq.com/<slug>                                           -> ashby:<slug>
+greenhouse:postman
+greenhouse:databricks
+greenhouse:cloudflare
+greenhouse:browserstack
+greenhouse:phonepe
+greenhouse:zeta
+greenhouse:groww
+greenhouse:razorpaysoftwareprivatelimited
+greenhouse:sprinklr
+greenhouse:thoughtspot
+greenhouse:mindtickle
+greenhouse:gupshup
+greenhouse:highradius
+greenhouse:darwinbox
+greenhouse:chargebee
+lever:cred
+lever:meesho
+lever:upgrad
+lever:paytm
+lever:swiggy
+lever:kreditbee
+lever:leadsquared
+lever:sarvam
+ashby:sarvam
+ashby:openai
+ashby:cohere
+ashby:perplexity
+ashby:notion
+ashby:ramp
+ashby:krutrim
